@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We're Hiring — Ché Orika Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #1a1210;
+      --warm: #2E1F16;
+      --warm-light: #5a3e30;
+      --cream: #FDF9F5;
+      --sand: #F5F0EB;
+      --gold: #C9A84C;
+      --gold-faint: #F5EDDA;
+      --border: #e8e0d6;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--warm);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* --- HEADER --- */
+    .site-header {
+      background: var(--dark);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.08em;
+    }
+    .logo em { font-style: italic; font-weight: 400; }
+
+    /* --- HERO --- */
+    .hero {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem 6rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .hero-title em { font-style: italic; font-weight: 400; }
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* --- CONTENT --- */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--warm);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title em { font-style: italic; font-weight: 400; }
+    .section { margin-bottom: 3.5rem; }
+    p { margin-bottom: 1rem; font-size: 0.95rem; }
+    ul { padding-left: 1.2rem; margin-bottom: 1.5rem; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .brand-desc { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .brand-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .brand-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--warm);
+    }
+    .brand-card p { font-size: 0.88rem; color: var(--warm-light); margin: 0; }
+
+    .trait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .trait {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+    }
+    .trait strong { display: block; font-weight: 600; color: var(--warm); margin-bottom: 0.3rem; font-size: 0.92rem; }
+    .trait span { font-size: 0.85rem; color: var(--warm-light); line-height: 1.6; }
+
+    .steps { counter-reset: step; }
+    .step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    .step-num {
+      counter-increment: step;
+      width: 36px; height: 36px;
+      background: var(--dark);
+      color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-content h4 { font-size: 0.92rem; font-weight: 600; color: var(--warm); margin-bottom: 0.2rem; }
+    .step-content p { font-size: 0.85rem; color: var(--warm-light); margin: 0; }
+
+    .culture-box {
+      background: var(--gold-faint);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .culture-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .culture-box p { font-size: 0.9rem; color: var(--warm-light); margin-bottom: 0.8rem; }
+    .culture-box p:last-child { margin-bottom: 0; }
+
+    .nice-to-have {
+      background: var(--sand);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    .nice-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .nice-to-have li { font-size: 0.88rem; color: var(--warm-light); }
+
+    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.5rem; }
+    .benefit {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--warm);
+    }
+
+    /* --- DIVIDER --- */
+    .divider {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .divider-line { height: 1px; background: var(--border); }
+
+    /* --- FORM --- */
+    .form-section {
+      background: var(--dark);
+      color: white;
+      padding: 5rem 2rem;
+    }
+    .form-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .form-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 3rem;
+    }
+    .form-group { margin-bottom: 1.8rem; }
+    .form-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .form-label .required { color: rgba(255,255,255,0.3); font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+    .form-select option { background: var(--dark); color: white; }
+    .form-file-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1.5px dashed rgba(255,255,255,0.15);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .form-file-label:hover { border-color: var(--gold); color: var(--gold); }
+    .form-file-label.has-file { border-color: var(--gold); color: var(--gold); border-style: solid; }
+    .form-file { display: none; }
+    .form-hint { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 0.4rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+    .submit-btn:hover { background: #d4af5a; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .form-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .form-success p { color: rgba(255,255,255,0.6); }
+
+    /* --- FOOTER --- */
+    .site-footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 2rem;
+    }
+    .footer-text { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 600px) {
+      .brand-desc, .trait-grid, .form-row, .benefits-grid { grid-template-columns: 1fr; }
+      .content { padding: 3rem 1.5rem; }
+      .hero { padding: 3.5rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Ché <em>Orika</em> Group</div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">We're Hiring</div>
+  <h1 class="hero-title">Marketing & Creative <em>Associate</em></h1>
+  <p class="hero-subtitle">Abuja, Nigeria · Hybrid</p>
+</section>
+
+<div class="content">
+
+  <!-- ABOUT US -->
+  <div class="section">
+    <h2 class="section-title">About <em>Us</em></h2>
+    <p>Ché Orika Group operates two businesses.</p>
+    <div class="brand-desc">
+      <div class="brand-card">
+        <h3>Ché Orika Boutique</h3>
+        <p>Women's ready-to-wear fashion. Dresses, sets, playsuits and statement pieces for women aged 20 to 35. We sell through our website, Instagram, TikTok, and our boutique in Gwarimpa, Abuja.</p>
+      </div>
+      <div class="brand-card">
+        <h3>The Pattern House</h3>
+        <p>Our B2B garment manufacturing arm. We produce for other fashion brands and designers across Nigeria. A separate brand with its own clients and identity.</p>
+      </div>
+    </div>
+    <p>This role covers marketing for both. The day-to-day focus is Ché Orika Boutique, but you will also help build The Pattern House's presence as it grows.</p>
+  </div>
+
+  <!-- ABOUT THE ROLE -->
+  <div class="section">
+    <h2 class="section-title">About the <em>Role</em></h2>
+    <p>As our Marketing & Creative Associate, you will be responsible for how the brand shows up online and in the market.</p>
+    <p>You will plan content, create it, post it, track what works, and adjust based on what the numbers tell you. You will also support operational marketing work including ad management, campaign planning, customer communication and coordination with the rest of the team.</p>
+    <p>This is a role where you will be involved in everything from coming up with the idea to filming it, editing it, writing the caption, posting it, and then looking at the data to figure out what to do next. You will have real ownership over the work and the space to bring your own ideas.</p>
+    <p>This role is hybrid. You will work from the boutique or on location at least two days per week, though some weeks may require more depending on shoot schedules or events. Outdoor content shoots across Abuja are a regular part of the job.</p>
+  </div>
+
+  <!-- CULTURE -->
+  <div class="section">
+    <div class="culture-box">
+      <h3>What it is like working here</h3>
+      <p>We are a small, close team building two businesses at the same time. The work is fast-paced and the standards are high, but the environment is supportive. You will work directly with the founder, your ideas will be heard, and when something you create does well, everyone celebrates it.</p>
+      <p>We care about doing good work and we care about the people doing it. We give honest feedback because we want everyone to get better, not because we want to find fault. If you are the kind of person who enjoys being part of something early, having a say in how things are built, and seeing the direct impact of your work, you will enjoy it here.</p>
+    </div>
+  </div>
+
+  <!-- RESPONSIBILITIES -->
+  <div class="section">
+    <h2 class="section-title">Key <em>Responsibilities</em></h2>
+
+    <p><strong>Strategy and planning</strong></p>
+    <ul>
+      <li>Own and maintain the weekly content calendar.</li>
+      <li>Understand who our customer is, what she responds to, and what drives her to buy or enquire.</li>
+      <li>Research trends and competitor activity, and bring ideas for what we could try.</li>
+      <li>Plan content around product launches, promotions, seasonal moments and business goals.</li>
+      <li>Use analytics to inform decisions and share learnings with the team.</li>
+    </ul>
+
+    <p><strong>Content creation</strong></p>
+    <ul>
+      <li>Shoot and edit short-form video content (Instagram Reels, TikTok, Stories).</li>
+      <li>Style outfits, direct models and choose shoot locations.</li>
+      <li>Write captions that communicate value and encourage action.</li>
+      <li>Ensure every product post includes the price and a clear call to action.</li>
+      <li>Create content that speaks to different audiences and channels as the brand grows.</li>
+    </ul>
+
+    <p><strong>Community and customer engagement</strong></p>
+    <ul>
+      <li>Respond to DMs and comments within 30 minutes during business hours.</li>
+      <li>Turn conversations into warm leads for the sales team.</li>
+      <li>Engage with followers, potential customers and the wider brand community daily.</li>
+    </ul>
+
+    <p><strong>Ads and performance</strong></p>
+    <ul>
+      <li>Set up and manage ad campaigns on Meta (Instagram and Facebook).</li>
+      <li>Monitor ad performance and flag anything that needs attention early.</li>
+      <li>Maintain the content tracker with accurate, up-to-date records.</li>
+    </ul>
+
+    <p><strong>Operational support</strong></p>
+    <ul>
+      <li>Coordinate with the founder on brand direction, new product drops and shoot planning.</li>
+      <li>Support the preparation and execution of campaigns, events and collaborations.</li>
+      <li>Keep brand assets, content files and documentation organised and accessible.</li>
+    </ul>
+  </div>
+
+  <!-- WHAT WE ARE LOOKING FOR -->
+  <div class="section">
+    <h2 class="section-title">What We Are <em>Looking For</em></h2>
+    <p>We are looking for someone creative, self-directed and genuinely interested in building something.</p>
+    <ul>
+      <li>Experience creating content for a fashion, lifestyle or consumer brand. Personal brand work counts if the quality and results are there.</li>
+      <li>Strong video skills. You can shoot on a phone, edit in CapCut or similar tools, and produce content that feels intentional and well put together.</li>
+      <li>A working understanding of analytics. You can look at post performance and explain what happened and what to try next.</li>
+      <li>The ability to write clearly, whether that is captions, briefs, DM responses or ad copy.</li>
+      <li>Comfortable adapting your content style for different platforms and audiences.</li>
+      <li>Familiarity with Meta Ads Manager or a willingness to learn it quickly.</li>
+      <li>A base in Abuja and availability to work from the boutique or on location at least two days per week.</li>
+    </ul>
+
+    <div class="nice-to-have">
+      <div class="nice-label">Nice to Have</div>
+      <ul>
+        <li>Experience running paid ad campaigns and interpreting the results.</li>
+        <li>Familiarity with content planning tools and social media scheduling platforms.</li>
+        <li>Experience working in a small team where you wear multiple hats.</li>
+        <li>An eye for styling and visual composition.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- THE KIND OF PERSON -->
+  <div class="section">
+    <h2 class="section-title">The Kind of Person Who <em>Does Well Here</em></h2>
+    <div class="trait-grid">
+      <div class="trait">
+        <strong>Self-starting</strong>
+        <span>You see what needs to be done and you get on with it. You bring ideas without waiting to be asked.</span>
+      </div>
+      <div class="trait">
+        <strong>Curious</strong>
+        <span>You are always looking at what other brands are doing and how we could apply it. You enjoy learning and staying sharp.</span>
+      </div>
+      <div class="trait">
+        <strong>Honest</strong>
+        <span>You are comfortable sharing results even when they are not great. You would rather have an honest conversation and figure out the next move together.</span>
+      </div>
+      <div class="trait">
+        <strong>Open to feedback</strong>
+        <span>We review work openly and talk about what could be better. We do this because we want everyone to grow.</span>
+      </div>
+      <div class="trait">
+        <strong>Reliable</strong>
+        <span>When you say something will be done, it gets done. Shoot days, deadlines and launches all depend on everyone delivering.</span>
+      </div>
+      <div class="trait">
+        <strong>Commercially minded</strong>
+        <span>You understand that good content should move the business forward. You think about how your work connects to growth.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="section">
+    <h2 class="section-title">What Success <em>Looks Like</em></h2>
+    <ul>
+      <li>Content is planned ahead of time and posted consistently.</li>
+      <li>Every product post includes a price, a clear call to action, and is trackable.</li>
+      <li>You can show, with data, which content types are driving the most engagement, DMs and sales.</li>
+      <li>DM response times stay under 30 minutes during business hours.</li>
+      <li>Ad campaigns are monitored regularly and adjusted when something is not performing.</li>
+      <li>The brand has a visible, consistent online presence across all platforms.</li>
+      <li>Content quality improves month over month as you learn from performance data.</li>
+      <li>The founder and team trust your judgement and feel confident giving you room to run with ideas.</li>
+    </ul>
+  </div>
+
+  <!-- COMPENSATION -->
+  <div class="section">
+    <h2 class="section-title">Compensation & <em>Benefits</em></h2>
+    <div class="benefits-grid">
+      <div class="benefit">Competitive salary based on experience</div>
+      <div class="benefit">Monthly data and communication allowance</div>
+      <div class="benefit">Performance reviews with clear criteria</div>
+      <div class="benefit">Direct access to the founder</div>
+      <div class="benefit">Opportunity to grow with a scaling company</div>
+      <div class="benefit">Involvement in real business decisions</div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- APPLICATION FORM -->
+<section class="form-section" id="apply">
+  <div class="form-inner">
+    <h2 class="form-title">Apply</h2>
+    <p class="form-subtitle">Fill in your details and we will be in touch.</p>
+
+    <form id="application-form" action="https://formspree.io/f/FORM_ID" method="POST" enctype="multipart/form-data">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name <span class="required">*</span></label>
+          <input type="text" name="first_name" class="form-input" placeholder="First name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name <span class="required">*</span></label>
+          <input type="text" name="last_name" class="form-input" placeholder="Last name" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email <span class="required">*</span></label>
+        <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Phone number <span class="required">*</span></label>
+        <input type="tel" name="phone" class="form-input" placeholder="+234..." required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Location <span class="required">*</span></label>
+        <input type="text" name="location" class="form-input" placeholder="Where are you based?" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">CV / Resume <span class="required">*</span></label>
+        <label class="form-file-label" id="cv-label">
+          <span>Upload your CV (PDF or DOC)</span>
+          <input type="file" name="cv" class="form-file" id="cv-input" accept=".pdf,.doc,.docx" required />
+        </label>
+        <div class="form-hint">PDF or Word document, max 5MB</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Portfolio or work samples</label>
+        <input type="url" name="portfolio" class="form-input" placeholder="Link to your portfolio, Instagram, or content you have created" />
+        <div class="form-hint">Share a link to any content you are proud of. Social media pages, videos, campaigns.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Go to our TikTok (@che.orika). If you had to get one of our videos to 10,000 views in the next 7 days, what kind of video would you make and why? <span class="required">*</span></label>
+        <textarea name="answer_tiktok" class="form-textarea" placeholder="Be specific. Tell us the concept, not just the strategy." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Name a brand (any brand, not just fashion) whose social media you genuinely admire. What specifically are they doing well? <span class="required">*</span></label>
+        <textarea name="answer_brand" class="form-textarea" placeholder="We want to know what you pay attention to." required style="min-height:90px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What is your biggest strength when it comes to content, and what is something you are still learning? <span class="required">*</span></label>
+        <textarea name="answer_strength" class="form-textarea" placeholder="Be honest. Everyone is learning something." required style="min-height:90px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Have you ever created content or marketing for a B2B business (selling to other businesses, not consumers)? If yes, tell us briefly. <span class="required">*</span></label>
+        <textarea name="answer_b2b" class="form-textarea" placeholder="If no, just say no. It is not a dealbreaker." required style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What is your salary expectation for this role? (Monthly, NGN) <span class="required">*</span></label>
+        <input type="text" name="salary_expectation" class="form-input" placeholder="e.g. 150,000" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Anything else you want us to know?</label>
+        <textarea name="notes" class="form-textarea" placeholder="Optional." style="min-height:80px;"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Submit Application</button>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <h3>Application received.</h3>
+      <p>Thank you for your interest in joining Ché Orika Group. We will review your application and be in touch if there is a fit.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-text">Ché Orika Group · Abuja, Nigeria · cheorika.com</div>
+</footer>
+
+<script>
+  // File upload label update
+  document.getElementById('cv-input').addEventListener('change', function() {
+    var label = document.getElementById('cv-label');
+    if (this.files.length > 0) {
+      label.querySelector('span').textContent = this.files[0].name;
+      label.classList.add('has-file');
+    } else {
+      label.querySelector('span').textContent = 'Upload your CV (PDF or DOC)';
+      label.classList.remove('has-file');
+    }
+  });
+
+  // Form submission
+  document.getElementById('application-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Application';
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit Application';
+      alert('Something went wrong. Please check your connection and try again.');
+    });
+  });
+</script>
+
+</body>
+</html>
